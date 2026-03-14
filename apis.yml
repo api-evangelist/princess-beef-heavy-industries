@@ -2,6 +2,23 @@ aid: princess-beef-heavy-industries
 url: >-
   https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml
 apis:
+  - aid: princess-beef-heavy-industries:giftshop-api
+    name: pb33f Giftshop API
+    tags:
+      - Products
+      - Commerce
+      - Merchandise
+    humanURL: https://pb33f.io/wiretap/giftshop-api/
+    properties:
+      - url: https://pb33f.io/wiretap/giftshop-api/
+        type: Documentation
+      - url: openapi/princess-beef-heavy-industries-giftshop-openapi.yml
+        type: OpenAPI
+    description: >-
+      The pb33f Giftshop API is a demo merchandise store API for t-shirts,
+      hoodies, and other pb33f branded merchandise. It provides endpoints for
+      listing, searching, creating, updating, and deleting products, with API
+      key authentication for write operations.
   - aid: princess-beef-heavy-industries:princess-beef-heavy-industries
     name: Princess Beef Heavy Industries
     tags:
@@ -25,11 +42,13 @@ tags:
   - Governance
   - Editors
   - Platform
+  - Products
+  - Commerce
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-01-08'
-modified: '2026-01-04'
+modified: '2026-03-14'
 position: Consumer
 description: >-
   At Princess Beef Heavy Industries (or as we call it pb33f), we build
