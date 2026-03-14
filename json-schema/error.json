@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/princess-beef-heavy-industries/blob/main/json-schema/error.json",
+  "title": "pb33f Giftshop Error",
+  "description": "An error response from the API, following the RFC 7807 Problem Details format.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "The URI of the error type."
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "A short, human-readable summary of the problem type."
+    },
+    "status": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 500,
+      "description": "The HTTP status code applicable to this problem."
+    },
+    "detail": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "A human-readable explanation specific to this occurrence of the problem."
+    },
+    "instance": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "A URI reference that identifies the specific occurrence of the problem."
+    }
+  }
+}

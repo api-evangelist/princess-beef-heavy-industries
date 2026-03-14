@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "pb33f": "https://pb33f.io/wiretap/giftshop-api/",
+    "Product": {
+      "@id": "pb33f:Product",
+      "@context": {
+        "id": "https://schema.org/identifier",
+        "shortCode": "https://schema.org/sku",
+        "name": "https://schema.org/name",
+        "description": "https://schema.org/description",
+        "price": "https://schema.org/price",
+        "category": "https://schema.org/category",
+        "image": "https://schema.org/image"
+      }
+    },
+    "Error": {
+      "@id": "pb33f:Error",
+      "@context": {
+        "type": "https://schema.org/url",
+        "title": "https://schema.org/name",
+        "status": "https://schema.org/httpStatusCode",
+        "detail": "https://schema.org/description",
+        "instance": "https://schema.org/url"
+      }
+    }
+  }
+}

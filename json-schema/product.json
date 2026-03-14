@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-evangelist/princess-beef-heavy-industries/blob/main/json-schema/product.json",
+  "title": "pb33f Giftshop Product",
+  "description": "A product is something that can be sold by the gift shop, such as t-shirts, hoodies, and other pb33f branded merchandise.",
+  "type": "object",
+  "required": [
+    "id",
+    "shortCode",
+    "name",
+    "description",
+    "price",
+    "category",
+    "image"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 50,
+      "format": "uuid",
+      "description": "The unique identifier for the product."
+    },
+    "shortCode": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "A short code for the product, easily human readable."
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "The name of the product."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "A description of the product."
+    },
+    "price": {
+      "type": "number",
+      "description": "The price of the product, as a floating point number."
+    },
+    "category": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "The category of the product."
+    },
+    "image": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "The URL of the product image."
+    }
+  }
+}
