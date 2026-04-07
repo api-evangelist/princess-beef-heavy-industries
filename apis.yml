@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml
 apis:
   - aid: princess-beef-heavy-industries:giftshop-api
-    name: pb33f Giftshop API
+    name: Pb33f Giftshop API
     tags:
       - Products
       - Commerce

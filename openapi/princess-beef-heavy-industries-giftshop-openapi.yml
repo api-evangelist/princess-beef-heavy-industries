@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: pb33f Giftshop API
+  title: Princess Beef Heavy Industries pb33f Giftshop API
   summary: >
     We sell t-shirts, hoodies and other merchandise for pb33f.
   description: >
@@ -37,7 +37,7 @@ paths:
       description: >
         Create a new product. If the product already exists, or the data is
         invalid a 400 error will be returned.
-      summary: Create a new product.
+      summary: Princess Beef Heavy Industries Create a new product.
       requestBody:
         description: The new product to create.
         content:
@@ -73,7 +73,7 @@ paths:
         can be filtered by category by using the `category` query parameter. If
         a category is not supplied or the category is invalid, all products will
         be returned.
-      summary: Get a list of all products.
+      summary: Princess Beef Heavy Industries Get a list of all products.
       responses:
         '200':
           $ref: '#/components/responses/ProductList'
@@ -96,7 +96,7 @@ paths:
         Get a specific product by its unique identifier (`id`) or by its short
         code (`shortCode`) values. If the product does not exist, a 404 error
         will be returned.
-      summary: Get a product by its `id` or `shortCode`
+      summary: Princess Beef Heavy Industries Get a product by its `id` or `shortCode`
       parameters:
         - $ref: '#/components/parameters/ProductPathId'
       responses:
@@ -120,7 +120,7 @@ paths:
         - product
       operationId: deleteProduct
       description: Remove a product from the database.
-      summary: Remove a product
+      summary: Princess Beef Heavy Industries Remove a product
       parameters:
         - $ref: '#/components/parameters/ProductPathId'
       responses:
@@ -160,7 +160,7 @@ paths:
       description: >
         Update a specific product by its unique identifier. If the product does
         not exist, a 404 error will be returned.
-      summary: Update a product
+      summary: Princess Beef Heavy Industries Update a product
       parameters:
         - $ref: '#/components/parameters/ProductPathId'
       responses:
@@ -184,7 +184,7 @@ paths:
         - product
       operationId: searchProducts
       description: Search products for a keyword.
-      summary: Search products.
+      summary: Princess Beef Heavy Industries Search products.
       parameters:
         - $ref: '#/components/parameters/KeywordSearch'
       responses:
