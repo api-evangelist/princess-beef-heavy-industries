@@ -19,12 +19,8 @@ servers:
   - url: https://api.pb33f.io/wiretap/giftshop
     description: Live production endpoint for general use.
 tags:
-  - name: cart
-    description: shopping cart operations
-  - name: product
+  - name: Product
     description: product operations
-  - name: checkout
-    description: checkout operations
 paths:
   /products:
     post:
@@ -32,7 +28,7 @@ paths:
         - ApiKeyAuth:
             - write:products
       tags:
-        - product
+        - Product
       operationId: createProduct
       description: >
         Create a new product. If the product already exists, or the data is
@@ -66,7 +62,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Category'
       tags:
-        - product
+        - Product
       operationId: getAllProducts
       description: >
         Retrieve all products available for purchase, in a single list. Products
@@ -90,7 +86,7 @@ paths:
       security:
         - {}
       tags:
-        - product
+        - Product
       operationId: getProductById
       description: >
         Get a specific product by its unique identifier (`id`) or by its short
@@ -117,7 +113,7 @@ paths:
         - ApiKeyAuth:
             - delete:products
       tags:
-        - product
+        - Product
       operationId: deleteProduct
       description: Remove a product from the database.
       summary: Princess Beef Heavy Industries Remove a product
@@ -146,7 +142,7 @@ paths:
         - ApiKeyAuth:
             - write:products
       tags:
-        - product
+        - Product
       operationId: updateProductById
       requestBody:
         description: The updated product.
@@ -181,7 +177,7 @@ paths:
       security:
         - {}
       tags:
-        - product
+        - Product
       operationId: searchProducts
       description: Search products for a keyword.
       summary: Princess Beef Heavy Industries Search products.

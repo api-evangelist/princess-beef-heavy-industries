@@ -5,9 +5,9 @@ apis:
   - aid: princess-beef-heavy-industries:giftshop-api
     name: Pb33f Giftshop API
     tags:
-      - Products
       - Commerce
       - Merchandise
+      - Products
     humanURL: https://pb33f.io/wiretap/giftshop-api/
     properties:
       - url: https://pb33f.io/wiretap/giftshop-api/
@@ -29,10 +29,10 @@ apis:
     name: Princess Beef Heavy Industries
     tags:
       - Documentation
-      - Rules
-      - Governance
       - Editors
+      - Governance
       - Platform
+      - Rules
     humanURL: https://pb33f.io
     properties:
       - url: https://pb33f.io
@@ -43,13 +43,13 @@ apis:
       hackers and ...
 name: Princess Beef Heavy Industries
 tags:
+  - Commerce
   - Documentation
-  - Rules
-  - Governance
   - Editors
+  - Governance
   - Platform
   - Products
-  - Commerce
+  - Rules
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
