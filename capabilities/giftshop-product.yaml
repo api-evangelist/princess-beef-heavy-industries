@@ -1,27 +1,25 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Princess Beef Heavy Industries pb33f Giftshop API
-  description: Want some cool gear, to go with your cool code? We've got you covered. Buy a t-shirt, hoodie or other merchandise
-    from our store to show your support for pb33f.
+  label: Princess Beef Heavy Industries pb33f Giftshop API — Product
+  description: 'Princess Beef Heavy Industries pb33f Giftshop API — Product. 6 operations. Lead operation: Princess Beef Heavy
+    Industries Create a new product.. Self-contained Naftiko capability covering one Princess Beef Heavy Industries business
+    surface.'
   tags:
-  - Princess
-  - Beef
-  - Heavy
-  - Industries
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Princess Beef Heavy Industries
+  - Product
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PRINCESS_BEEF_HEAVY_INDUSTRIES_API_KEY: PRINCESS_BEEF_HEAVY_INDUSTRIES_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: princess-beef-heavy-industries
+    namespace: giftshop-product
     baseUri: https://api.pb33f.io/wiretap/giftshop
-    description: Princess Beef Heavy Industries pb33f Giftshop API HTTP API.
-    authentication:
-      type: apikey
-      in: header
-      name: X-API-Key
-      value: '{{PRINCESS_BEEF_HEAVY_INDUSTRIES_TOKEN}}'
+    description: Princess Beef Heavy Industries pb33f Giftshop API — Product business capability. Self-contained, no shared
+      references.
     resources:
     - name: products
       path: /products
@@ -34,6 +32,12 @@ capability:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
       - name: getallproducts
         method: GET
         description: Princess Beef Heavy Industries Get a list of all products.
@@ -69,6 +73,12 @@ capability:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
     - name: search
       path: /search
       operations:
@@ -80,139 +90,144 @@ capability:
         - name: result
           type: object
           value: $.
+    authentication:
+      type: apikey
+      key: X-API-Key
+      value: '{{env.PRINCESS_BEEF_HEAVY_INDUSTRIES_API_KEY}}'
+      placement: header
   exposes:
   - type: rest
+    namespace: giftshop-product-rest
     port: 8080
-    namespace: princess-beef-heavy-industries-rest
-    description: REST adapter for Princess Beef Heavy Industries pb33f Giftshop API.
+    description: REST adapter for Princess Beef Heavy Industries pb33f Giftshop API — Product. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
     resources:
-    - path: /products
-      name: createproduct
+    - path: /v1/products
+      name: products
+      description: REST surface for products.
       operations:
       - method: POST
         name: createproduct
         description: Princess Beef Heavy Industries Create a new product.
-        call: princess-beef-heavy-industries.createproduct
+        call: giftshop-product.createproduct
+        with:
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /products
-      name: getallproducts
-      operations:
       - method: GET
         name: getallproducts
         description: Princess Beef Heavy Industries Get a list of all products.
-        call: princess-beef-heavy-industries.getallproducts
+        call: giftshop-product.getallproducts
         outputParameters:
         - type: object
           mapping: $.
-    - path: /products/{id}
-      name: getproductbyid
+    - path: /v1/products/{id}
+      name: products-id
+      description: REST surface for products-id.
       operations:
       - method: GET
         name: getproductbyid
         description: Princess Beef Heavy Industries Get a product by its `id` or `shortCode`
-        call: princess-beef-heavy-industries.getproductbyid
+        call: giftshop-product.getproductbyid
         outputParameters:
         - type: object
           mapping: $.
-    - path: /products/{id}
-      name: deleteproduct
-      operations:
       - method: DELETE
         name: deleteproduct
         description: Princess Beef Heavy Industries Remove a product
-        call: princess-beef-heavy-industries.deleteproduct
+        call: giftshop-product.deleteproduct
         outputParameters:
         - type: object
           mapping: $.
-    - path: /products/{id}
-      name: updateproductbyid
-      operations:
       - method: POST
         name: updateproductbyid
         description: Princess Beef Heavy Industries Update a product
-        call: princess-beef-heavy-industries.updateproductbyid
+        call: giftshop-product.updateproductbyid
+        with:
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /search
-      name: searchproducts
+    - path: /v1/search
+      name: search
+      description: REST surface for search.
       operations:
       - method: GET
         name: searchproducts
         description: Princess Beef Heavy Industries Search products.
-        call: princess-beef-heavy-industries.searchproducts
+        call: giftshop-product.searchproducts
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: giftshop-product-mcp
     port: 9090
-    namespace: princess-beef-heavy-industries-mcp
     transport: http
-    description: MCP adapter for Princess Beef Heavy Industries pb33f Giftshop API for AI agent use.
+    description: MCP adapter for Princess Beef Heavy Industries pb33f Giftshop API — Product. One tool per consumed operation,
+      routed inline through this capability's consumes block.
     tools:
-    - name: createproduct
+    - name: princess-beef-heavy-industries-create
       description: Princess Beef Heavy Industries Create a new product.
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: princess-beef-heavy-industries.createproduct
+      call: giftshop-product.createproduct
+      with:
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getallproducts
+    - name: princess-beef-heavy-industries-get
       description: Princess Beef Heavy Industries Get a list of all products.
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: princess-beef-heavy-industries.getallproducts
+      call: giftshop-product.getallproducts
       outputParameters:
       - type: object
         mapping: $.
-    - name: getproductbyid
+    - name: princess-beef-heavy-industries-get-2
       description: Princess Beef Heavy Industries Get a product by its `id` or `shortCode`
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: princess-beef-heavy-industries.getproductbyid
+      call: giftshop-product.getproductbyid
       outputParameters:
       - type: object
         mapping: $.
-    - name: deleteproduct
+    - name: princess-beef-heavy-industries-remove
       description: Princess Beef Heavy Industries Remove a product
       hints:
         readOnly: false
         destructive: true
         idempotent: true
-      call: princess-beef-heavy-industries.deleteproduct
+      call: giftshop-product.deleteproduct
       outputParameters:
       - type: object
         mapping: $.
-    - name: updateproductbyid
+    - name: princess-beef-heavy-industries-update
       description: Princess Beef Heavy Industries Update a product
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: princess-beef-heavy-industries.updateproductbyid
+      call: giftshop-product.updateproductbyid
+      with:
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: searchproducts
+    - name: princess-beef-heavy-industries-search
       description: Princess Beef Heavy Industries Search products.
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: princess-beef-heavy-industries.searchproducts
+      call: giftshop-product.searchproducts
       outputParameters:
       - type: object
         mapping: $.
-binds:
-- namespace: env
-  keys:
-    PRINCESS_BEEF_HEAVY_INDUSTRIES_TOKEN: PRINCESS_BEEF_HEAVY_INDUSTRIES_TOKEN
