@@ -1,5 +1,8 @@
 aid: princess-beef-heavy-industries
 url: https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/pb33f
 apis:
 - aid: princess-beef-heavy-industries:giftshop-api
   name: Pb33f Giftshop API
