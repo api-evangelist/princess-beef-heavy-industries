@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Princess Beef Heavy Industries pb33f Giftshop API",
+    "version": "0.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Product",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Get a list of all products.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pb33f.io/wiretap/giftshop/products",
+            "params": [
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Category to filter products by. Should be the name of a category, e.g. `shirts`."
+              }
+            ]
+          },
+          "docs": "Retrieve all products available for purchase, in a single list. Products can be filtered by category by using the `category` query parameter. If a category is not supplied or the category is invalid, all products will be returned.\n"
+        },
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Create a new product.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pb33f.io/wiretap/giftshop/products",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a new product. If the product already exists, or the data is invalid a 400 error will be returned.\n"
+        },
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Get a product by its `id` or `shortCode`",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pb33f.io/wiretap/giftshop/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Product ID of the item to retrieve."
+              }
+            ]
+          },
+          "docs": "Get a specific product by its unique identifier (`id`) or by its short code (`shortCode`) values. If the product does not exist, a 404 error will be returned.\n"
+        },
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Update a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pb33f.io/wiretap/giftshop/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Product ID of the item to retrieve."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update a specific product by its unique identifier. If the product does not exist, a 404 error will be returned.\n"
+        },
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Remove a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.pb33f.io/wiretap/giftshop/products/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Product ID of the item to retrieve."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-API-Key",
+              "value": "{{X-API-Key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Remove a product from the database."
+        },
+        {
+          "info": {
+            "name": "Princess Beef Heavy Industries Search products.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pb33f.io/wiretap/giftshop/search",
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "The search string to use when searching for products."
+              }
+            ]
+          },
+          "docs": "Search products for a keyword."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
