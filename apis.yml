@@ -1,6 +1,10 @@
 aid: princess-beef-heavy-industries
 url: https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/princess-beef-heavy-industries-domain-security.yml
+  - type: Authentication
+    url: authentication/princess-beef-heavy-industries-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/pb33f
 apis:

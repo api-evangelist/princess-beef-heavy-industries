@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/princess-beef-heavy-industries-giftshop-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: API Key authentication. Provide your API key as the value of the `X-API-Key`
+    header.
+  sources:
+  - openapi/princess-beef-heavy-industries-giftshop-openapi.yml
