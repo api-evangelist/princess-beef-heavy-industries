@@ -1,0 +1,14 @@
+{
+  "provider": "princess-beef-heavy-industries",
+  "sources": [
+    "princess-beef-heavy-industries-product-api-openapi.yml"
+  ],
+  "outputs": [
+    "princess-beef-heavy-industries-product-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
