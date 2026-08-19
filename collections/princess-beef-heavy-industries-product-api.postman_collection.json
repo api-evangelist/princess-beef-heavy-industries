@@ -1,0 +1,2359 @@
+{
+  "item": [
+    {
+      "id": "b25faff5-58cc-476e-b384-22edb8adc3b8",
+      "name": "Product",
+      "description": {
+        "content": "product operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81ea4552-0c27-4a33-abe8-91cdaa0194f8",
+          "name": "Princess Beef Heavy Industries Create a new product.",
+          "request": {
+            "name": "Princess Beef Heavy Industries Create a new product.",
+            "description": {
+              "content": "Create a new product. If the product already exists, or the data is invalid a 400 error will be returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"shortCode\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"category\": \"<string>\",\n  \"image\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b173d24-6c21-4568-95e6-411f8efad9de",
+              "name": "Product is a single product object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on the front\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c8a1b6f-bf1c-4db0-a1d2-10450bac2701",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "198925c3-a77c-4ac3-8c13-4f8925bfa35f",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4189260d-545c-49c8-85f3-2a0f4b96698e",
+              "name": "The item requested could not be found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The item requested does not exist or could not be found.\",\n  \"code\": \"not-found\",\n  \"url\": \"https://pb33f.io/errors/not-found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3f18795-010f-445d-a651-f334912b8411",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d877760a-f0fd-4dcb-bf81-b259a48494a9",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea61e6ce-6539-4f59-baf6-4ccad5ec7ae2",
+          "name": "Princess Beef Heavy Industries Get a list of all products.",
+          "request": {
+            "name": "Princess Beef Heavy Industries Get a list of all products.",
+            "description": {
+              "content": "Retrieve all products available for purchase, in a single list. Products can be filtered by category by using the `category` query parameter. If a category is not supplied or the category is invalid, all products will be returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Category to filter products by. Should be the name of a category, e.g. `shirts`."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "id": "42b3e8a8-af7e-4d10-8af0-86621ed93b83",
+              "name": "ProductList is an array of Product objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "shirts"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80739235-93e5-45d6-814c-e288e854e0be",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "shirts"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e7b61f59-e119-42bc-8bc9-3911612118f5",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "shirts"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3841833a-4aea-45d8-8eae-3fc676082ec0",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "shirts"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fad089d8-1adf-4632-ab1a-834fe56a674e",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "shirts"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44565fcd-2770-4517-bed8-68bd4ce210bf",
+          "name": "Princess Beef Heavy Industries Get a product by its `id` or `shortCode`",
+          "request": {
+            "name": "Princess Beef Heavy Industries Get a product by its `id` or `shortCode`",
+            "description": {
+              "content": "Get a specific product by its unique identifier (`id`) or by its short code (`shortCode`) values. If the product does not exist, a 404 error will be returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Product ID of the item to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "id": "1f237a9d-d9e4-4e45-b0f2-9ecee5c6fcc3",
+              "name": "Product is a single product object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on the front\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17bef25d-1bf2-4ae1-82e7-e37a835be5c2",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "058b508a-fa4c-48e4-b30f-f7c8efd14a8e",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d043a5a8-624d-4400-bd2a-1f53ed5da21a",
+              "name": "The item requested could not be found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The item requested does not exist or could not be found.\",\n  \"code\": \"not-found\",\n  \"url\": \"https://pb33f.io/errors/not-found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7cc821a5-2147-4e1f-84a7-5d584a16bd43",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "832370ac-bef1-4128-a8e7-680cd196e6d3",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81586ef5-dd69-4d24-ad28-3b4876ccc214",
+          "name": "Princess Beef Heavy Industries Remove a product",
+          "request": {
+            "name": "Princess Beef Heavy Industries Remove a product",
+            "description": {
+              "content": "Remove a product from the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Product ID of the item to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "015e6f30-7729-4351-972f-c96281393ac6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2bdb5593-4148-4378-9098-a418b719f5b3",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33cfcba9-2944-4bac-bf00-121f31fbe1f1",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08ac2288-785d-4765-b0e3-1bab02f8cb7a",
+              "name": "The item requested could not be found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The item requested does not exist or could not be found.\",\n  \"code\": \"not-found\",\n  \"url\": \"https://pb33f.io/errors/not-found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "77946fec-2431-4d24-92f9-4e6148117087",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "505a08cc-94f4-484a-9c12-28e5f3146017",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4166d76d-50a5-4378-82b3-e3425bc95d05",
+          "name": "Princess Beef Heavy Industries Update a product",
+          "request": {
+            "name": "Princess Beef Heavy Industries Update a product",
+            "description": {
+              "content": "Update a specific product by its unique identifier. If the product does not exist, a 404 error will be returned.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "id",
+                  "description": "(Required) Product ID of the item to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-API-Key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<uuid>\",\n  \"shortCode\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<float>\",\n  \"category\": \"<string>\",\n  \"image\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "796c8f0e-3064-4c4e-b0ff-5f928df7f3f5",
+              "name": "Product is a single product object.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on the front\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "819b911b-399d-4b5a-96a4-2722fbd7362d",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7db15f9b-f7ac-485c-8512-04d17e16a1d5",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ccd1bb93-d46f-4dfe-b425-0d68463e3aeb",
+              "name": "The item requested could not be found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The item requested does not exist or could not be found.\",\n  \"code\": \"not-found\",\n  \"url\": \"https://pb33f.io/errors/not-found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "350c5246-0649-4896-b8b0-a499afc91fcf",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa1fd672-8c61-4de3-8e18-b2a78ef0a98e",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "id",
+                      "description": "(Required) Product ID of the item to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"abc-def\",\n  \"shortCode\": \"pb0001\",\n  \"name\": \"pb33f t-shirt\",\n  \"description\": \"A t-shirt with the pb33f logo on it.\",\n  \"price\": 19.99,\n  \"category\": \"shirts\",\n  \"image\": \"https://pb33f.io/images/t-shirt.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de95fac9-8db2-4f02-b892-894b57cd4fd7",
+          "name": "Princess Beef Heavy Industries Search products.",
+          "request": {
+            "name": "Princess Beef Heavy Industries Search products.",
+            "description": {
+              "content": "Search products for a keyword.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) The search string to use when searching for products."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "noauth"
+            }
+          },
+          "response": [
+            {
+              "id": "3409b00d-6a4f-4ea5-89bb-2f9d23e85e8f",
+              "name": "ProductList is an array of Product objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  },\n  {\n    \"id\": \"d1404c5c-69bd-4cd2-a4cf-b47c79a30112\",\n    \"shortCode\": \"pb0001\",\n    \"name\": \"pb33f t-shirt\",\n    \"description\": \"A t-shirt with the pb33f logo on the front\",\n    \"price\": 19.99,\n    \"category\": \"shirts\",\n    \"image\": \"https://pb33f.io/images/t-shirt.png\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db627114-3ce3-4ddd-be56-5e6c6a798d87",
+              "name": "A bad request, the URL supplied was not valid or could not be processed correctly.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The URL supplied was not valid or could not be processed correctly.\",\n  \"code\": \"bad-request\",\n  \"url\": \"https://pb33f.io/errors/bad-request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cec43e7-ab54-4c66-bd73-83825d22312d",
+              "name": "Unauthorized request, you must be authenticated to perform this operation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"This request requires authentication. You are not authenticated.\",\n  \"code\": \"authentication\",\n  \"url\": \"https://pb33f.io/errors/authentication\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68369db9-5c0b-42a7-8c8f-a9d742410224",
+              "name": "The item requested could not be found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"The item requested does not exist or could not be found.\",\n  \"code\": \"not-found\",\n  \"url\": \"https://pb33f.io/errors/not-found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8bed6253-a2a2-423a-8737-8d3e98637900",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5f8304af-23c8-4099-bab4-e65a73f6f754",
+              "name": "Something went wrong and a server error occurred, unable to process the request.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "hacker"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of seconds to wait before retrying the request.",
+                  "key": "Retry-After",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of requests allowed in the current period.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1000"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Something went wrong and a server error occurred, unable to process the request.\",\n  \"code\": \"server-error\",\n  \"url\": \"https://pb33f.io/errors/server-error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pb33f.io/wiretap/giftshop",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bee29af9-921b-4b4e-a43a-3e2fc43b4121",
+    "name": "Princess Beef Heavy Industries pb33f Giftshop Product API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Want some cool gear, to go with your cool code? We've got you covered. Buy a t-shirt, hoodie or other merchandise from our store to show your support for pb33f.\n\n\nContact Support:\n Name: Dave Shanley\n Email: buckaroo@pb33f.io",
+      "type": "text/plain"
+    }
+  }
+}
