@@ -14,6 +14,12 @@ apis:
   name: Princess Beef Heavy Industries
   tags:
   - Documentation
+  - Editor
+  - Governance
+  - Platform
+  - Rules
+  tags_raw:
+  - Documentation
   - Editors
   - Governance
   - Platform
@@ -46,7 +52,7 @@ name: Princess Beef Heavy Industries
 tags:
   - Commerce
   - Documentation
-  - Editors
+  - Editor
   - Governance
   - Platform
   - Product
