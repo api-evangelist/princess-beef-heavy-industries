@@ -1,6 +1,12 @@
 aid: princess-beef-heavy-industries
 url: https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml
 common:
+  - type: Plans
+    url: plans/princess-beef-heavy-industries-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/princess-beef-heavy-industries-rate-limits.yml
+  - type: FinOps
+    url: finops/princess-beef-heavy-industries-finops.yml
   - type: AgenticAccess
     url: agentic-access/princess-beef-heavy-industries-agentic-access.yml
   - type: DomainSecurity
