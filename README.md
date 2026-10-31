@@ -1,4 +1,4 @@
-# Princess Beef Heavy Industries (princess-beef-heavy-industries)
+# Princess Beef Heavy Industries
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,78 +66,98 @@
 
 At Princess Beef Heavy Industries (or as we call it pb33f), we build beautifully designed heavy-duty and enterprise grade software for code hackers and ...
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/princess-beef-heavy-industries/refs/heads/main/apis.yml)
+**Areas:** Commerce · Documentation · Editor · Governance · Platform · Product · Rules
 
-## Scope
+## Princess Beef Heavy Industries on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Princess Beef Heavy Industries is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/princess-beef-heavy-industries/](https://apis.io/providers/princess-beef-heavy-industries/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Commerce
-- Documentation
-- Editors
-- Governance
-- Platform
-- Products
-- Rules
+- [Princess Beef Heavy Industries](https://apis.io/apis/princess-beef-heavy-industries/princess-beef-heavy-industries/) — At Princess Beef Heavy Industries (or as we call it pb33f), we build beautifully designed heavy-duty and enterprise grade software for code hackers and ...
+- [Princess Beef Heavy Industries Product API](https://apis.io/apis/princess-beef-heavy-industries/princess-beef-heavy-industries-product-api/) — product operations
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Pb33f Giftshop API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The pb33f Giftshop API is a demo merchandise store API for t-shirts, hoodies, and other pb33f branded merchandise. It provides endpoints for listing, searching, creating, updating, and deleting products, with API key authentication for write operations.
+- [Princess Beef Heavy Industries Agentic Access](https://apis.io/agentic-access/princess-beef-heavy-industries/princess-beef-heavy-industries-agentic-access/)
 
-- **Human URL:** [https://pb33f.io/wiretap/giftshop-api/](https://pb33f.io/wiretap/giftshop-api/)
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Commerce
-- Merchandise
-- Products
+- [pb33f Giftshop Error](https://apis.io/schemas/princess-beef-heavy-industries/error/)
+- [pb33f Giftshop Product](https://apis.io/schemas/princess-beef-heavy-industries/product/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://pb33f.io/wiretap/giftshop-api/)
-- [OpenAPI](openapi/princess-beef-heavy-industries-giftshop-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/princess-beef-heavy-industries-giftshop.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/princess-beef-heavy-industries-giftshop.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/product.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/error.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/princess-beef-heavy-industries-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+Linked-data contexts for the provider's vocabulary.
 
-### Princess Beef Heavy Industries
+- [Princess Beef Heavy Industries Context](https://apis.io/jsonld/princess-beef-heavy-industries/princess-beef-heavy-industries-context/)
 
-At Princess Beef Heavy Industries (or as we call it pb33f), we build beautifully designed heavy-duty and enterprise grade software for code hackers and ...
+#### Collections (2)
 
-- **Human URL:** [https://pb33f.io](https://pb33f.io)
+Postman and Open Collection request collections.
 
-#### Tags
+- [Princess Beef Heavy Industries pb33f Giftshop API](https://apis.io/collections/princess-beef-heavy-industries/open-princess-beef-heavy-industries-giftshop/)
+- [Princess Beef Heavy Industries pb33f Giftshop Product API](https://apis.io/collections/princess-beef-heavy-industries/open-princess-beef-heavy-industries-product-api/)
 
-- Documentation
-- Editors
-- Governance
-- Platform
-- Rules
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://pb33f.io)
-- [Postman Collection](collections/princess-beef-heavy-industries-giftshop.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/princess-beef-heavy-industries-giftshop.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Princess Beef Heavy Industries — jsonschema rules](https://apis.io/rules/princess-beef-heavy-industries/princess-beef-heavy-industries-jsonschema-spectral-rules/)
 
-## Common Properties
+#### Security (2)
 
-- [GitHub Organization](https://github.com/pb33f)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Maintainers
+- [Princess Beef Heavy Industries Authentication](https://apis.io/security/princess-beef-heavy-industries/princess-beef-heavy-industries-authentication/)
+- [Princess Beef Heavy Industries Domain Security](https://apis.io/security/princess-beef-heavy-industries/princess-beef-heavy-industries-domain-security/)
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Princess Beef Heavy Industries Plans Pricing](https://apis.io/plans/princess-beef-heavy-industries/princess-beef-heavy-industries-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Princess Beef Heavy Industries Rate Limits](https://apis.io/rate-limits/princess-beef-heavy-industries/princess-beef-heavy-industries-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Princess Beef Heavy Industries Finops](https://apis.io/finops/princess-beef-heavy-industries/princess-beef-heavy-industries-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [GitHub](https://github.com/pb33f)
+
+## API Evangelist rating
+
+**Unrated** — no public website could be reached for this company, so there was almost nothing to measure and nothing a reader could check.
+
+This is not a score of zero. No rating is published for this company. If that is wrong because something public exists that we missed, say so on this repository or email [info@apievangelist.com](mailto:info@apievangelist.com) and it will be re-run — free, and no justification needed.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Princess Beef Heavy Industries: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/princess-beef-heavy-industries/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
